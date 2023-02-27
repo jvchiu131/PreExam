@@ -1,4 +1,13 @@
+<?php
+require_once "controllers/clientsingle.controller.php";
+require_once "models/clientsingle.model.php";
+?>
+
 <link rel = "stylesheet" href = "views/assets/css/styles.css">
+
+<script src="views/assets/plugins/sweetalert2/sweet_alert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <div class="clearfix"></div>
 	
@@ -6,7 +15,7 @@
   <div class="container-fluid">
    <div class="row pt-2 pb-2">
      <div class="col-sm-12">
-  	    <h4 class="flex justify-center">CLIENT INFORMATION</h4>
+  	    <h4 class="flex justify-center border border-blue text-red-600 bg-blue-500 py-6">CLIENT INFORMATION</h4>
      </div>
    </div>
 
@@ -22,7 +31,7 @@
                           <input type="text" class="form-control" id="tns-cname" placeholder="Enter Client Name" name="tns-cname" autocomplete="nope" required>
                       </div>
 
-                      <div class="col-md-1 form-group">
+                      <div class="col-md-1 ... form-group">
                           <label>&nbsp;</label>
                           <div class="icheck-material-success">
                             <input type="checkbox" id="num-isactive" name="num-isactive" value="1" checked/>
@@ -30,23 +39,23 @@
                           </div>
                       </div>
 
-                      <div class="col-sm-1 form-group">
+                      <div class="col-sm-1 ... form-group">
                           <label for="input-2">Client ID</label>
                           <input type="text" class="form-control" id="tns-clientid" name="tns-clientid" value="">
                       </div>
                   </div>                 
 
-                 <div class="form-group">
+                 <div class="form-group ...">
                     <label for="input-3">Address</label>
                     <input type="text" class="form-control" id="tns-address" placeholder="Enter Address" name="tns-address" autocomplete="nope">
                  </div>                                 
 
                  <div class="row">
-                      <div class="col-sm-6 form-group">
+                      <div class="col-sm-6 ... form-group">
                           <label for="input-4">Landline #</label>
                           <input type="text" class="form-control" id="num-phone" placeholder="Enter Landline #" name="num-phone" autocomplete="nope">
                       </div>
-                      <div class="col-sm-6 form-group">
+                      <div class="col-sm-6 ... form-group">
                           <label for="input-5">Mobile #</label>
                           <input type="text" class="form-control" id="num-mobile" placeholder="Enter Mobile #" name="num-mobile" autocomplete="nope">
                       </div>
@@ -130,3 +139,8 @@
     </div>
   </div>
 </div>
+
+<html>
+<script src="views/js/clientsingle.js"></script>
+</html>
+
