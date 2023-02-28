@@ -5,9 +5,7 @@
 <script src="views/js/clientsingle.js"></script>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
 
 <div class="clearfix"></div>
 
@@ -26,7 +24,7 @@
     <div >
       <div>
         <div class="flex text-center font-bold">
-        <a class="col-span-1 container border-none px-8 py-40 max-w-sm mx-20 my-20 bg-blue-500 text-base text-white  md:container px-8 py-12 max-w-3xl mx-auto my-20 border shadow-lg hover:bg-blue-400 drop-shadow-md hover:drop-shadow-xl duration-200" href="views/modules/customersingle.php"><h4>GO TO CUSTOMER PAGE</h4></a>
+        <a class="col-span-1 container border-none px-8 py-40 max-w-sm mx-20 my-20 bg-blue-500 text-base text-white  md:container px-8 py-12 max-w-3xl mx-auto my-20 border shadow-lg hover:bg-blue-400 drop-shadow-md hover:drop-shadow-xl duration-200" href="customersingle.php"><h4>GO TO CUSTOMER PAGE</h4></a>
         </div>
       </div>
     </div>

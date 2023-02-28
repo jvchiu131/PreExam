@@ -1,22 +1,21 @@
 <?php
-require_once "../../controllers/clientsingle.controller.php";
-require_once "../../models/clientsingle.model.php";
+require_once "controllers/clientsingle.controller.php";
+require_once "models/clientsingle.model.php";
 
 ?>
 
-<link rel = "stylesheet" href = "../assets/css/styles.css">
+<link rel = "stylesheet" href = "views/assets/css/styles.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css"/>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.js"></script>
-<script src="../js/clientsingle.js"></script>
+<script src="views/js/clientsingle.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 
-<div class="w-full bg-fixed bg-cover bg-center" style="height:50rem; background-image: url(../assets/bg1.jpg);">
+
+
+<div class="w-full bg-fixed bg-cover bg-center" style="height:50rem; background-image: url(views/assets/bg1.jpg);">
 <div class="clearfix"></div>
 	
 <div class="container bg-white border-none px-8 py-12 max-w-md mx-auto my-20  md:container px-8 py-12 max-w-3xl mx-auto my-20 border shadow-xl">
@@ -94,7 +93,7 @@ require_once "../../models/clientsingle.model.php";
 
                     <button type="submit" class="btn btn-light rounded-full text-center font-sans box-border h-12 w-32 border border-blue-500 hover:bg-blue-500 hover:text-white  transition duration-300 ease-linear font-bold px-5"><i class="fa fa-save"></i>Save</button>
 
-                    <a href="../../index.php"class="btn btn-light rounded-full text-center font-sans box-border h-12 w-32 border border-blue-500 hover:bg-blue-500 hover:text-white  transition duration-300 ease-linear font-bold px-5">Go Back To Main</a>
+                    <a href="index.php"class="btn btn-light rounded-full text-center font-sans box-border h-12 w-32 border border-blue-500 hover:bg-blue-500 hover:text-white  transition duration-300 ease-linear font-bold px-5">Go Back To Main</a>
 
                   </div>
                 </div>
