@@ -1,6 +1,4 @@
 $(function() {
-    
-
    $("#btn-new-client").click(function(){
    	  $("#tns-cname").focus();
       swal.fire({
@@ -75,7 +73,7 @@ $(function() {
             client.append("cperson", cperson);
 
             $.ajax({
-               url:"../../../ajax/client_save_record.ajax.php",
+               url:"ajax/client_save_record.ajax.php",
                method: "POST",
                data: client,
                cache: false,
