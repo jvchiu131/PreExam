@@ -1,163 +1,42 @@
-<?php
-require_once "controllers/clientsingle.controller.php";
-require_once "models/clientsingle.model.php";
-
-?>
 
 <link rel = "stylesheet" href = "views/assets/css/styles.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 <script src="views/js/clientsingle.js"></script>
-<script src="views/assets/plugins/sweetalert2/sweet_alert.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 
-
 <div class="clearfix"></div>
+
+<div class="w-full bg-cover bg-center" style="height:50rem; background-image: url(views/assets/gradient2.jpg);">
 	
-<div class="content-wrapper">
-  <div class="container-fluid">
-   <div class="row pt-2 pb-2">
-     <div class="col-sm-12">
-  	    <h4 class="flex justify-center border border-blue text-white bg-blue-500 py-6">CUSTOMER INFORMATION</h4>
-     </div>
-   </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <form role="form" id="client-form" method="POST" autocomplete="nope">
-          <div class="card">
-            <div class="card-body ml-32">
-                 <input type="text" name="trans_type" id="trans_type" value="New" style="visibility:hidden;" required>
-                 <div class="row grid grid-cols-3 gap 4 my-2 ">
-                      <div class="col-sm-10 place-self-auto ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="tns-cname" placeholder="Enter Customer Name" name="tns-cname" autocomplete="nope" required>
-                      </div>
-
-                      <div class="form-group">
-                          <label>&nbsp;</label>
-                          <div class="icheck-material-success place-self-auto  py-2">
-                            <input type="checkbox" id="num-isactive" name="num-isactive" value="1" checked/>
-                            <label for="num-isactive">Active</label>
-                          </div>
-                      </div>
-
-                      <div class=" ... form-group place-self-auto ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 pr-2" id="tns-clientid" name="tns-clientid" placeholder="Enter Customer ID" value="">
-                      </div>
-                  </div>                 
-
-                 <div class="row grid grid-cols-3 gap 4 my-2">
-
-                 <div class="form-group flex justify-start border-sm  pr-2">
-                   
-                    <input type="text" class="form-control rounded-lg border-2 border-blue-500 pr-2" id="tns-address" placeholder="Enter Address" name="tns-address" autocomplete="nope">
-                 </div>            
-                      <div class="col-sm-6 place-self-auto form-group ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="num-phone" placeholder="Landline #" name="num-phone" autocomplete="nope">
-                      </div>
-                      <div class="col-sm-6 place-self-auto form-group ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="num-mobile" placeholder="Enter Mobile #" name="num-mobile" autocomplete="nope">
-                      </div>
-                  </div>
-
-                  <div class="row grid grid-cols-3 gap 4">
-                      <div class="col-sm-4 form-group ">
-                         
-                          <input type="text" class="form-control  rounded-lg border-2 border-blue-500" id="tns-email" placeholder="Enter E-mail Address" name="tns-email" autocomplete="nope">
-                      </div>
-                      <div class="col-sm-4 form-group ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500" id="tns-website" placeholder="Enter URL Website" name="tns-website" autocomplete="nope">
-                      </div>                      
-                      <div class="col-sm-4 form-group ">
-                          
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="tns-cperson" placeholder="Enter Contact Person" name="tns-cperson" autocomplete="nope">
-                      </div>                     
-                  </div> 
-            </div>
-
-            <div class="card-footer">
-              <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-9 flex justify-end my-6 mr-12">
-                  <div class="float-sm-right">
-                    <button type="button" class="btn btn-light text-center font-sans border border-blue-500 hover:bg-blue-700 hover:text-white transition duration-300 ease-linear font-bold px-5" id="btn-new-client"><i class="fa fa-file"></i>&nbsp;&nbsp;New</button>
-
-                    <button type="submit" class="btn btn-light text-center font-sans border border-blue-500 hover:bg-blue-700 hover:text-white transition duration-300 ease-linear font-bold px-5"><i class="fa fa-save"></i>&nbsp;&nbsp;Save</button>
-
-                    <button type="button" class="btn btn-light text-center font-sans border border-blue-500 hover:bg-blue-700 hover:text-white transition duration-300 ease-linear font-bold px-5" id="btn-search" data-toggle="modal" data-target="#modal-search-client"><i class="icon-search4 mr-2"></i> Search</button> 
-                          
-                  </div>
-                </div>
-              </div>
-            </div>  <!-- footer -->
-
-          </div>    <!-- card -->
-        </form>
-      </div>
-    </div><!--End Row-->
-  </div>    <!-- container-fluid -->
-</div>      <!-- content-wrapper -->
-
-<div id="modal-search-client" class="modal" tabindex="-1">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content"">
-      <div class="modal-header">
-        <h5 class="modal-title profile-name"><i class="icon-menu7 mr-2"></i> &nbsp;CUSTOMER LIST</h5>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <div class="h-divider">
-      </div>
-
-      <div class="modal-body">
-        <table id="datatable" class="table table-hover table-bordered table-striped datatable-small-font profile-grid-header clientTable" width="100%">
-          <thead>
-            <tr>
-              <th>Customer Name</th>
-              <th>Address</th>
-              <th>Contact #</th>
-            </tr>
-          </thead>
-          <tbody>
-          <?php
-            $clients = (new ControllerClient)->ctrShowClientList();
-            foreach ($clients as $key => $value) {
-              echo '<tr clientid='.$value["clientid"].'>
-                      <td>'.$value["cname"].'</td>
-                      <td>'.$value["address"].'</td>
-                      <td>'.$value["mobile"].'</td>
-                    </tr>';
-              }
-          ?>
-          </tbody>
-        </table>
-
-        <script>
-  $(document).ready(function() {
-     $('#datatable').DataTable({
-     "ordering": true,
-     "searching": true,
-      "info": true,
-     "responsive": true,
-     "lengthChange": true,
-     "pageLength": 10
-     });
-  });
-</script>
+    <div class="container px-8 py-12 max-w-md mx-auto my-20  md:container px-8 py-12 max-w-3xl mx-auto my-20 border-none shadow-lg">
+      <div>
+        <div class="flex justify-center">
+          <h4 class="font-bold text-white">MAIN HUB</h4>
+        </div>
       </div>
     </div>
-  </div>
+
+
+<div class="grid grid-cols-2">
+    <div >
+      <div>
+        <div class="flex text-center font-bold">
+        <a class="col-span-1 container border-none px-8 py-40 max-w-sm mx-20 my-20 bg-blue-500 text-base text-white  md:container px-8 py-12 max-w-3xl mx-auto my-20 border shadow-lg hover:bg-blue-400 drop-shadow-md hover:drop-shadow-xl duration-200" href="views/modules/customersingle.php"><h4>GO TO CUSTOMER PAGE</h4></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div>
+        <div class="flex text-center font-bold">
+          <a class="col-span-1 container border-none px-8 py-40 max-w-sm mx-20 my-20 bg-blue-500 text-base text-white  md:container px-8 py-12 max-w-3xl mx-auto my-20 border shadow-lg  hover:bg-blue-400  drop-shadow-md hover:drop-shadow-xl duration-200" href="views/modules/studentadd.php"><h4>GO TO STUDENT PAGE</h4></a>
+        </div>
+      </div>
+    </div>
 </div>
-
-
-

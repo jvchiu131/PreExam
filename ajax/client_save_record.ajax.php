@@ -1,6 +1,8 @@
 <?php
 require_once "../controllers/clientsingle.controller.php";
 require_once "../models/clientsingle.model.php";
+require_once "../controllers/clients.controller.php";
+require_once "../models/clients.model.php";
 
 class saveClient{
   public $trans_type; 

@@ -1,11 +1,5 @@
 $(function() {
-   $('#client-form input[id^="num"]').on("keypress", function (e) {
-      return _helper.isNumeric(e) ? true : e.preventDefault();
-   });
-
-   $('#client-form input[id^="tns"]').on("keypress", function (e) {
-      return _helper.allChars(e) ? true : e.preventDefault();
-   });    
+    
 
    $("#btn-new-client").click(function(){
    	  $("#tns-cname").focus();
@@ -81,7 +75,7 @@ $(function() {
             client.append("cperson", cperson);
 
             $.ajax({
-               url:"ajax/client_save_record.ajax.php",
+               url:"../../../ajax/client_save_record.ajax.php",
                method: "POST",
                data: client,
                cache: false,
