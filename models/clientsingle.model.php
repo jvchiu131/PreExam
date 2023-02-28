@@ -24,7 +24,7 @@ class ModelClient{
 			$stmt->bindParam(":website", $data["website"], PDO::PARAM_STR);
 			$stmt->bindParam(":cperson", $data["cperson"], PDO::PARAM_STR);
 			$stmt->bindParam(":mobile", $data["mobile"], PDO::PARAM_STR);
-			$stmt->execute();			
+			$stmt->execute();
 
 		    $pdo->commit();
 		    return "ok";

@@ -4,7 +4,6 @@ require_once "models/clientsingle.model.php";
 ?>
 
 <link rel = "stylesheet" href = "views/assets/css/styles.css">
-
 <script src="views/assets/plugins/sweetalert2/sweet_alert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -138,9 +137,9 @@ require_once "models/clientsingle.model.php";
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="views/js/clientsingle.js"></script>
 </div>
 
-<html>
-<script src="views/js/clientsingle.js"></script>
-</html>
+
 
