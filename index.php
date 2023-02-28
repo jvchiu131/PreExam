@@ -6,6 +6,7 @@ require_once "models/clientsingle.model.php";
 
 <link rel = "stylesheet" href = "views/assets/css/styles.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
 <script src="views/js/clientsingle.js"></script>
 <script src="views/assets/plugins/sweetalert2/sweet_alert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -21,7 +22,7 @@ require_once "models/clientsingle.model.php";
   <div class="container-fluid">
    <div class="row pt-2 pb-2">
      <div class="col-sm-12">
-  	    <h4 class="flex justify-center border border-blue text-white bg-blue-500 py-6">CLIENT INFORMATION</h4>
+  	    <h4 class="flex justify-center border border-blue text-white bg-blue-500 py-6">CUSTOMER INFORMATION</h4>
      </div>
    </div>
 
@@ -34,7 +35,7 @@ require_once "models/clientsingle.model.php";
                  <div class="row grid grid-cols-3 gap 4 my-2 ">
                       <div class="col-sm-10 place-self-auto ">
                           
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="tns-cname" placeholder="Enter Client Name" name="tns-cname" autocomplete="nope" required>
+                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="tns-cname" placeholder="Enter Customer Name" name="tns-cname" autocomplete="nope" required>
                       </div>
 
                       <div class="form-group">
@@ -47,7 +48,7 @@ require_once "models/clientsingle.model.php";
 
                       <div class=" ... form-group place-self-auto ">
                           
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 pr-2" id="tns-clientid" name="tns-clientid" placeholder="Enter Client ID" value="">
+                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 pr-2" id="tns-clientid" name="tns-clientid" placeholder="Enter Customer ID" value="">
                       </div>
                   </div>                 
 
@@ -59,7 +60,7 @@ require_once "models/clientsingle.model.php";
                  </div>            
                       <div class="col-sm-6 place-self-auto form-group ">
                           
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="num-phone" placeholder="Enter Landline #" name="num-phone" autocomplete="nope">
+                          <input type="text" class="form-control rounded-lg border-2 border-blue-500 " id="num-phone" placeholder="Landline #" name="num-phone" autocomplete="nope">
                       </div>
                       <div class="col-sm-6 place-self-auto form-group ">
                           
@@ -74,7 +75,7 @@ require_once "models/clientsingle.model.php";
                       </div>
                       <div class="col-sm-4 form-group ">
                           
-                          <input type="text" class="form-control rounded-lg border-2 border-blue-500" id="tns-website" placeholder="Enter Website URL" name="tns-website" autocomplete="nope">
+                          <input type="text" class="form-control rounded-lg border-2 border-blue-500" id="tns-website" placeholder="Enter URL Website" name="tns-website" autocomplete="nope">
                       </div>                      
                       <div class="col-sm-4 form-group ">
                           
@@ -109,9 +110,9 @@ require_once "models/clientsingle.model.php";
 
 <div id="modal-search-client" class="modal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="background-color: #343f53;">
+    <div class="modal-content"">
       <div class="modal-header">
-        <h5 class="modal-title profile-name"><i class="icon-menu7 mr-2"></i> &nbsp;CLIENT LIST</h5>
+        <h5 class="modal-title profile-name"><i class="icon-menu7 mr-2"></i> &nbsp;CUSTOMER LIST</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
@@ -119,7 +120,7 @@ require_once "models/clientsingle.model.php";
       </div>
 
       <div class="modal-body">
-        <table class="table table-hover table-bordered table-striped datatable-small-font profile-grid-header clientTable" width="100%">
+        <table id="datatable" class="table table-hover table-bordered table-striped datatable-small-font profile-grid-header clientTable" width="100%">
           <thead>
             <tr>
               <th>Customer Name</th>
@@ -140,6 +141,19 @@ require_once "models/clientsingle.model.php";
           ?>
           </tbody>
         </table>
+
+        <script>
+  $(document).ready(function() {
+     $('#datatable').DataTable({
+     "ordering": true,
+     "searching": true,
+      "info": true,
+     "responsive": true,
+     "lengthChange": true,
+     "pageLength": 10
+     });
+  });
+</script>
       </div>
     </div>
   </div>
